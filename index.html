@@ -39,7 +39,10 @@
 			$("div.text").html("Name: " + name + "</br>" + " " + "Price: " + price)
 				setTimeout(function(){
 				$("div.text").fadeOut().empty()}, 5000).location.reload();
-		});
+				});
+				setTimeout(function(){
+    				window.location.reload(); },5000);//reloads page after text is displayed
+				});
 		});
 
 
