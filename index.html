@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Assignment 6 </title>
+
+	<script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>
+
+	<script>
+		function Art (name, price, smallimage, largeimage)
+		{
+			this.name = name; 
+			this.price = price; 
+			this.smallimage = smallimage;
+			this.largeimage = largeimage;
+		}
+
+		let arr = []; //array
+		arr[0] = new Art("cat", 500, 'cat.jpg', 'cat.jpg');
+		arr[1] = new Art("dog", 700, 'dog.jpg', 'dog.jpg');
+		arr[2] = new Art("elephant", 300, 'elephant.jpg', 'elephant.jpg');
+		arr[3] = new Art("squirrel", 200, 'squirrel.jpg', 'squirrel.jpg');
+		arr[4] = new Art("dolphin", 900, 'dolphin.jpg', 'dolphin.jpg');
+
+		$(document).ready(function(){
+			$('#divContainer img').on({
+				mouseover: function(){
+					var imageUrl = $(this).attr('src'); //gives image that we are on
+					$('#mainImage').attr('src', imageUrl).hide().fadeIn();
+				}
+		});
+		});
+
+		$(document).ready(function(){
+			$('#divContainer img').click(function(){
+			var id = $(this).attr("id");
+			var name = arr[id].name;
+			var price = arr[id].price;
+			
+			$("div.text").html("Name: " + name + "</br>" + " " + "Price: " + price)
+				setTimeout(function(){
+				$("div.text").fadeOut().empty()}, 5000);
+		});
+		});
+
+
+	</script>
+
+
+	<style type="text/css">
+		.imgStyle{
+			height:100px; 
+			width:100px;
+			border:3px solid #FFF;
+			
+			}
+
+		.container{
+			position: relative;
+		}
+
+		.text{
+			color: #000;
+			background-color: #FFF;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			bottom: 50%;
+			left: 25%;
+			right: 25%;
+			text-align: center;
+			font-size: 40px;
+			font-family: sans-serif;
+			font-style: bold;	
+			transform: translate(-50%, -50%);	
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class = "container">
+	<img id = "mainImage" height="500" width = "540" style = "border: 3px solid #FFF"
+		 src = 'images/cat.jpg'/>
+	<div class = "text"> </div>
+	</div>
+
+	</br> 
+	<div id ="divContainer">
+
+		<img src = 'images/cat.jpg' class = "imgStyle" id = '0'/>
+
+		<img src = 'images/dog.jpg' class = "imgStyle" id = '1'/>
+		<img src = 'images/elephant.jpg' class = "imgStyle" id = '2'/>
+		<img src = 'images/squirrel.jpg' class = "imgStyle"/ id = '3'>
+		<img src = 'images/dolphin.jpg' class = "imgStyle" id = '4'/>
+
+	</div>
+</body>
+</html>
