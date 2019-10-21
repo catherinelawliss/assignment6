@@ -15,11 +15,11 @@
 		}
 
 		let arr = []; //array
-		arr[0] = new Art("cat", 500, 'cat.jpg', 'cat.jpg');
-		arr[1] = new Art("dog", 700, 'dog.jpg', 'dog.jpg');
-		arr[2] = new Art("elephant", 300, 'elephant.jpg', 'elephant.jpg');
-		arr[3] = new Art("squirrel", 200, 'squirrel.jpg', 'squirrel.jpg');
-		arr[4] = new Art("dolphin", 900, 'dolphin.jpg', 'dolphin.jpg');
+		arr[0] = new Art("Cat", 500, 'cat.jpg', 'cat.jpg');
+		arr[1] = new Art("Dog", 700, 'dog.jpg', 'dog.jpg');
+		arr[2] = new Art("Elephant", 300, 'elephant.jpg', 'elephant.jpg');
+		arr[3] = new Art("Squirrel", 200, 'squirrel.jpg', 'squirrel.jpg');
+		arr[4] = new Art("Dolphin", 900, 'dolphin.jpg', 'dolphin.jpg');
 
 		$(document).ready(function(){
 			$('#divContainer img').on({
@@ -36,11 +36,11 @@
 			var name = arr[id].name;
 			var price = arr[id].price;
 			
-			$("div.text").html("Name: " + name + "</br>" + " " + "Price: " + price)
+			$("div.text").html("NAME: " + name + "</br>" + " " + "PRICE: $" + price)
 			setTimeout(function(){
 				$("div.text").fadeOut().empty();}, 5000);
 			setTimeout(function(){
-    			window.location.reload(); },5000);//reloads page after
+    			window.location.reload(); },5000);//reloads page after so user can click new image
 			});
 
 			});
@@ -63,19 +63,18 @@
 		}
 
 		.text{
-			color: #000;
+			color: #D3D3D3;
 			position: absolute;
 			text-align: center;
 			top: 50%;
 			bottom: 50%;
 			left: 25%;
 			right: 25%;
-			text-align: center;
+			transform:translate(-50%,-50%);
 			font-size: 40px;
 			font-family: sans-serif;
-			font-style: bold;	
-			transform: translate(-50%, -50%);	
 		}
+
 	</style>
 
 </head>
@@ -83,19 +82,19 @@
 <body>
 	<div class = "container">
 	<img id = "mainImage" height="500" width = "540" style = "border: 3px solid #FFF"
-		 src = 'cat.jpg'/>
+		 src = 'images/cat.jpg'/>
 	<div class = "text"> </div>
 	</div>
 
 	</br> 
 	<div id ="divContainer">
 
-		<img src = 'cat.jpg' class = "imgStyle" id = '0'/>
+		<img src = 'images/cat.jpg' class = "imgStyle" id = '0'/>
 
-		<img src = 'dog.jpg' class = "imgStyle" id = '1'/>
-		<img src = 'elephant.jpg' class = "imgStyle" id = '2'/>
-		<img src = 'squirrel.jpg' class = "imgStyle"/ id = '3'>
-		<img src = 'dolphin.jpg' class = "imgStyle" id = '4'/>
+		<img src = 'images/dog.jpg' class = "imgStyle" id = '1'/>
+		<img src = 'images/elephant.jpg' class = "imgStyle" id = '2'/>
+		<img src = 'images/squirrel.jpg' class = "imgStyle"/ id = '3'>
+		<img src = 'images/dolphin.jpg' class = "imgStyle" id = '4'/>
 
 	</div>
 </body>
